@@ -1,0 +1,15 @@
+# {%block content %},{% endblock content %}   【content为父代be blocked name】
+# block用于子代重写父代
+
+[Example:]
+"base.html"
+<head>
+  <link rel ="styleseet" href = "style.css">
+  <title>{% block title %} My Plant {% endblock %}</title>
+</head>
+
+"Overriding Child Template"
+{% extend "base.html" %}
+{% block title %} My Site {% endblock %}
+
+----'My Plant' will be overriden by the child and then display 'My Site'
