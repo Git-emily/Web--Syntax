@@ -1,0 +1,21 @@
+$(function(){
+  $.ajax({
+        url:'/Site_info',
+        data:{},
+        type:'post',
+        async: false,
+        dataType:'json',
+        success:function(data){
+            for (var i=0;i<data.length;i++){
+                $(siteSelect).append('<option>' + data[i] +'</option>');
+                //$(siteSelect).selectpicker('refresh'); ？？
+                //$(siteSelect).selectpicker('render'); ？？
+        }
+    },
+    error:function () {}
+    })
+})
+
+select多级联动：https://c.runoob.com/codedemo/3490；https://www.cnblogs.com/SallyShan/p/12968615.html
+
+//.append()方法参考https://www.php.cn/js-tutorial-398647.html
