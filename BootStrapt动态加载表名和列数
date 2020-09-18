@@ -1,0 +1,43 @@
+#bootstrap加载table，列名和列数实现动态变化
+
+$(function(){
+  $('#id_name').bootstrapTable('destory');
+  $.ajax({
+    url: '/getData', #后台获取数据
+    type: 'post',
+    async: true,
+    datatype: 'json',
+    data: JSON.stringify({'site': site, "ip_add": ip_add}), #传递参数
+    success: function (return_data) {    #返回的data,类型为string
+        console.log('data#####', return_data);
+        var IAQ_data = [];
+        var results = eval('(' + return_data + ')')  #将string类型转换成JSON（https://www.cnblogs.com/loveamyforever/p/6008654.html）
+        //alert(typeof results)
+        for (var i = 0; i < (Object.keys(results[0])).length; i++) {   #Object.keys()方法，https://blog.csdn.net/fujian9544/article/details/91457382
+            var IAQ = (Object.keys(results[0]))[i];
+            IAQ_data.push({
+                'title': IAQ,
+                'field': IAQ,
+                align: 'middle',
+                valign: 'middle'
+            });
+        }
+        $table.bootstrapTable('destroy').bootstrapTable({
+            data: results,
+            striped: true,  //显示行间隔色
+            pagination: true,  //分页
+            pageSize: 20,
+            pageNumber: 1, //默认加载第一页
+            pageList: [10, 20, 50, 100], //可供选择的每页行数
+            sidePagination: 'client', //服务端分页，比client快
+            //showRefresh: true, //显示刷新按钮
+            columns: IAQ_data
+        });
+    },
+    error: function () {
+        alert('Error! No Table_Data');
+    }
+        });
+
+
+})
