@@ -1,0 +1,7 @@
+JS 隐藏和显示元素: https://blog.csdn.net/worm0527/article/details/50300627
+
+JS 刷新当前页面:http://caibaojian.com/javascript-refresh-page.html
+https://shiliewrain.github.io/2017/08/22/js-reload/
+
+
+JS 删除元素对象和内容：http://www.liangshunet.com/ca/201702/854302542.htm
