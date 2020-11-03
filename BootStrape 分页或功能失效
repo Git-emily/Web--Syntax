@@ -1,0 +1,8 @@
+#分页可以选择server或client模式
+
+server模式：https://blog.csdn.net/feilong806/article/details/53763637?_sm_au_=iVVS17jqTLK4DnsHj3tFjKtC88qJW
+https://blog.csdn.net/menghuannvxia/article/details/51980726?_sm_au_=iVVS17jqTLK4DnsHj3tFjKtC88qJW
+
+#如果出现分页功能不能用，考虑：
+1. html中是否有bootstrape相关css和js
+2. 后天返回的数据是否符合前台接受的格式，Reference: https://blog.csdn.net/xueshr/article/details/89402393
